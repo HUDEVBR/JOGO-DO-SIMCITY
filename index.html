@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./public/main.css">
+    <title>Jogo do Simcity</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three/examples/jsm/"
+          }
+        }
+      </script>
+</head>
+<body>
+    <div id="render-target"></div>
+    <!-- <div id="'root-window">
+    </div>  -->
+    
+
+<script type="module" >
+        import {createScene} from './src/scene.js'
+        window.onload = () => {
+            window.scene = createScene();
+            document.addEventListener('mousedown', window.scene.onMouseDown, false);
+            document.addEventListener('mouseup', window.scene.onMouseUp, false);
+            document.addEventListener('mousemove', window.scene.onMouseMove, false);
+            window.scene.start();
+        }
+    </script>
+</body>
+</html>
